@@ -1,0 +1,250 @@
+*, *:before, *:after {
+  box-sizing : border-box;
+}
+
+body {
+  font-size   : 16px;
+  font-family : 'Roboto', sans-serif;
+  color       : #333;
+}
+
+.btn {
+  border        : 1px solid #CCC;
+  background    : #EEE;
+  color         : #666;
+  font-size     : 18px;
+  padding       : 0 15px;
+  line-height   : 40px;
+  border-radius : 3px;
+}
+
+.btn--primary {
+  border     : 1px solid #A6370C;
+  background : #B84112;
+  color      : #FFF;
+}
+
+.btn--primary:hover {
+  background : #CA5426;
+}
+
+.section {
+  padding    : 40px 0;
+  text-align : center;
+  transition : padding .5s;
+}
+
+.section img {
+  display   : block;
+  max-width : 100%;
+  height    : auto;
+}
+
+.section--top {
+  background      : url('../img/lagoon-bg-480.jpg') 50% 50% no-repeat;
+  width           : 100%;
+  padding         : 0 0 80% 0;
+  overflow        : hidden;
+  background-size : cover;
+}
+
+.section--footer {
+  text-align : center;
+  background : #E1E8F3;
+  color      : #3F5168;
+  border-top : 1px solid #D6DFEE;
+}
+
+.section__inner {
+  position  : relative;
+  max-width : 1280px;
+  margin    : 0 auto;
+  padding   : 0 20px;
+}
+
+.section__title {
+  font-family : 'Roboto Slab', serif;
+  font-weight : bold;
+  margin      : 0 0 40px 0;
+  font-size   : 30px;
+  color       : #3F5168;
+  transition  : font-size .5s;
+}
+
+.branding {
+  position    : absolute;
+  top         : 15px;
+  left        : 50%;
+  margin-left : -100px;
+  width       : 200px;
+  border      : 2px solid #FFF;
+  padding     : 10px 15px;
+  box-shadow  : inset 0 0 20px 5px rgba(0, 0, 0, .2), 0 0 30px rgba(0, 0, 0, .2), 2px 2px 5px rgba(0, 0, 0, .2);
+  transition  : all .5s;
+}
+
+.pl {
+}
+
+.pl__item {
+  padding       : 40px 0;
+  border-bottom : 1px solid #E1E8F3;
+}
+
+.pl__item:first-child {
+  border-top : 1px solid #E1E8F3;
+}
+
+.pl__item-image {
+  background    : #E1E8F3;
+  border-radius : 1000px;
+  padding       : 20px;
+  width         : 90%;
+  max-width     : 400px;
+  margin        : 0 auto 20px;
+  position      : relative;
+}
+
+.pl__item-image-controls {
+  position   : absolute;
+  bottom     : 0;
+  right      : 0;
+  text-align : center;
+}
+
+.pl__item-image-select {
+  border-radius    : 100px;
+  border           : none;
+  background-color : #E7D0C6;
+  padding          : 0;
+  display          : inline-block;
+  width            : 25px;
+  height           : 25px;
+  margin-left      : 5px;
+}
+
+.pl__item-image-select:hover {
+  background-color : #DEAB97;
+}
+
+.pl__item-image-select:focus {
+  outline : none;
+}
+
+.pl__item-image-select.active {
+  background-color : #B84112;
+  box-shadow       : 0 5px 10px -5px rgba(0, 0, 0, .5);
+}
+
+.pl__item-title {
+  font-family : 'Roboto Slab', serif;
+  font-size  : 24px;
+  margin     : 0 0 10px;
+  color      : #B84112;
+  transition : font-size .5s;
+}
+
+.pl__item-price {
+  background-color : #3F5168;
+  color            : #FFF;
+  display          : inline-block;
+  line-height      : 50px;
+  width            : 50px;
+  text-align       : center;
+  border-radius    : 100px;
+  font-weight      : bold;
+  font-size        : 18px;
+}
+
+.pl__item-meta {
+  color         : #A4AFBD;
+  font-size     : 14px;
+  margin-bottom : 20px;
+}
+
+@media (min-width : 480px) {
+
+  .section {
+    padding : 80px 0;
+  }
+
+  .section--top {
+    background      : url('../img/lagoon-bg-1280.jpg') 50% 50% no-repeat;
+    background-size : cover;
+    padding         : 0 0 50% 0;
+  }
+
+  .section__inner {
+    padding : 0 20px;
+  }
+
+  .section__title {
+    margin    : 0 0 80px 0;
+    font-size : 40px;
+  }
+
+  .branding {
+    top         : 15px;
+    left        : 20px;
+    margin-left : 0;
+    width       : 200px;
+  }
+}
+
+@media (min-width : 1024px) {
+
+  .section--top {
+    background      : url('../img/lagoon-bg-1280.jpg') 50% 50% no-repeat;
+    background-size : cover;
+    padding         : 0 0 40% 0;
+  }
+
+  .section__title {
+    margin    : 0 0 80px 0;
+    font-size : 60px;
+  }
+
+  .pl {
+    width   : 100%;
+    display : table;
+  }
+
+  .pl__item {
+    display : table-cell;
+    padding : 0;
+    border  : none;
+  }
+
+  .pl__item:first-child {
+    border : none;
+  }
+
+  .pl__item-title {
+    font-size : 18px;
+  }
+
+}
+
+@media (min-width : 1280px) {
+
+  .section--top {
+    background      : url('../img/lagoon-bg-1280.jpg') 50% 50% no-repeat;
+    background-size : cover;
+    padding         : 0 0 35% 0;
+  }
+
+  .pl__item-title {
+    font-size : 24px;
+  }
+
+}
+
+@media (min-width : 1600px) {
+
+  .section--top {
+    background      : url('../img/lagoon-bg-1280.jpg') 50% 50% no-repeat;
+    background-size : cover;
+    padding         : 0 0 25% 0;
+  }
+
+}

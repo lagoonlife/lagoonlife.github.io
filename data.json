@@ -1,0 +1,66 @@
+{
+  "paypalEmail": "sales@lagoon-life.com",
+  "products": [
+    {
+      "title": "Lagoon Life T-Shirt",
+      "price": "19",
+      "images": [
+        "img/tshirt-white-blue-front.png",
+        "img/tshirt-white-blue-back.png"
+      ],
+      "options": [
+        {
+          "label": "Size",
+          "values": [
+            "Small",
+            "Medium",
+            "Large",
+            "X-Large"
+          ]
+        },
+        {
+          "label": "Style",
+          "values": [
+            "Blue on White"
+          ]
+        }
+      ],
+      "shipping": "3.00",
+      "shipping2": "1.00"
+    },
+    {
+      "title": "Lagoon Life Visor",
+      "price": "19",
+      "images": [
+        "img/visor-blue-white.png"
+      ],
+      "options": [
+        {
+          "label": "Style",
+          "values": [
+            "White on Blue"
+          ]
+        }
+      ],
+      "shipping": "3.00",
+      "shipping2": "1.00"
+    },
+    {
+      "title": "Lagoon-Life.com Sticker",
+      "price": "1",
+      "images": [
+        "img/stickers.png"
+      ],
+      "options": [
+        {
+          "label": "Color",
+          "values": [
+            "Black", "White", "Blue"
+          ]
+        }
+      ],
+      "shipping": "0.00",
+      "shipping2": "0.00"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lagoon Life</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="bower_components/modernizr/modernizr.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl as app">
+
+<div class="section section--top">
+    <div class="section__inner">
+        <h1 class="branding">
+            <img src="img/lagoon-life.svg" alt="Lagoon Life"/>
+        </h1>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section__inner">
+        <h2 class="section__title"><i class="fa fa-anchor"></i> Apparel &amp; Gear</h2>
+
+        <div class="pl">
+
+            <div class="pl__item" ng-repeat="p in app.products">
+                <div class="pl__item-image">
+                    <img ng-repeat="img in p.images"
+                         ng-src="{{ img }}"
+                         ng-show="p.selectedImg == $index || (!p.selectedImg && $index == 0)"/>
+
+                    <div class="pl__item-image-controls" ng-show="p.images.length > 1">
+                        <button class="pl__item-image-select"
+                                ng-class="{'active':p.selectedImg == $index || (!p.selectedImg && $index == 0)}"
+                                ng-repeat="img in p.images"
+                                ng-click="p.selectedImg=$index"></button>
+                    </div>
+                </div>
+
+                <h3 class="pl__item-title">
+                    <span class="pl__item-price">${{ p.price }}</span>
+                    {{ p.title }}
+                </h3>
+
+                <form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+                    <div class="pl__item-meta" ng-show="p.options">
+                        <p ng-repeat="opt in p.options">
+                            <label for="os{{ $index }}">{{ opt.label }}:</label>
+                            <input type="hidden" name="on{{ $index }}" value="{{ opt.label }}">
+                            <select name="os{{ $index }}" id="os{{ $index }}">
+                                <option ng-repeat="val in opt.values" value="{{ val }}">{{ val }}</option>
+                            </select>
+                        </p>
+                    </div>
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="{{ app.paypalEmail }}">
+                    <input type="hidden" name="item_name" value="{{ p.title }}">
+                    <input type="hidden" name="amount" value="{{ p.price }}">
+                    <input type="hidden" name="shipping" value="{{ p.shipping }}">
+                    <input type="hidden" name="shipping2" value="{{ p.shipping2 }}">
+                    <input type="hidden" name="return" value="">
+
+                    <button class="btn btn--primary" type="submit"><i class="fa fa-plus"></i> Add to Cart</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="section section--footer">
+    Copyright &copy; 2014 <strong>Lagoon-Life.com</strong>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/minicart/3.0.5/minicart.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
