@@ -138,28 +138,40 @@ body {
 
 .pl__item-title {
   font-family : 'Roboto Slab', serif;
-  font-size  : 24px;
-  margin     : 0 0 10px;
-  color      : #B84112;
-  transition : font-size .5s;
+  font-size   : 16px;
+  margin      : 0 0 10px;
+  color       : #B84112;
+  transition  : font-size .5s;
 }
 
 .pl__item-price {
   background-color : #3F5168;
   color            : #FFF;
   display          : inline-block;
-  line-height      : 50px;
-  width            : 50px;
+  line-height      : 40px;
+  width            : 40px;
   text-align       : center;
   border-radius    : 100px;
   font-weight      : bold;
-  font-size        : 18px;
+  font-size        : 16px;
 }
 
 .pl__item-meta {
   color         : #A4AFBD;
   font-size     : 14px;
   margin-bottom : 20px;
+}
+
+@media (min-width : 400px) {
+  .pl__item-title {
+    font-size : 24px;
+  }
+
+  .pl__item-price {
+    line-height : 50px;
+    width       : 50px;
+    font-size   : 18px;
+  }
 }
 
 @media (min-width : 480px) {
